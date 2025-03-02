@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Kireina! 🎉</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #fff5f5;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* #playButton {
+      cursor: pointer;
+      font-size: 40px;
+      background: none;
+      border: none;
+      color: #ff6b6b;
+      margin: 50px auto;
+      transition: transform 0.3s;
+    }
+    #playButton:hover {
+      transform: scale(1.2);
+    }
+    .hidden {
+      display: none;
+    } */
+
+    .lock-container {
+      position: relative;
+      width: 200px;
+      height: 150px;
+      margin: 50px auto;
+      cursor: pointer;
+    }
+
+    /* Heart halves */
+    .heart-half {
+      position: absolute;
+      font-size: 60px;
+      transition: all 1s ease;
+      top: 0;
+    }
+    .left-heart { left: 30px; }
+    .right-heart { right: 30px; }
+
+    /* Key styling */
+    #key {
+      position: absolute;
+      font-size: 50px;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 1s ease;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    /* Unlocking animations */
+    .unlocked .left-heart {
+      transform: translateX(-50px) rotate(-45deg);
+      opacity: 0;
+    }
+    .unlocked .right-heart {
+      transform: translateX(50px) rotate(45deg);
+      opacity: 0;
+    }
+    .unlocked #key {
+      transform: translate(-50%, 30px) rotate(90deg);
+      animation: none;
+      opacity: 0;
+    }
+    
+    #content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #e74c3c;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #333;
+      margin: 20px 0;
+    }
+    a.video-link {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1.1em;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    a.video-link:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <button id="playButton" onclick="revealContent()">▶️</button>
+
+  <div id="content" class="hidden">
+    <h1>Happy Birthday, Kireina! 💖</h1>
+    <img src="Kireina.png" alt="Kireina">
+    <p>
+      <!-- PASTE YOUR LETTER HERE -->
+      Dear Sayangnya Aku!<br>
+      Hello cantik! How are you feeling?<br>
+      Cheers to your 25th Birthday ya sayangku! <br>
+
+      On this very special day of yours, I wanted to say congratulations first and foremost for making it thusfar!<br>
+      
+
+
+    </p>
+    <a href="INSERT_YOUTUBE_OR_DRIVE_LINK_HERE" class="video-link" target="_blank">Watch Your Birthday Video 🎥</a>
+  </div>
+
+  <script>
+    function revealContent() {
+      document.getElementById("playButton").classList.add("hidden");
+      document.getElementById("content").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
