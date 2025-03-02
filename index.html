@@ -61,50 +61,57 @@
       margin-top: 10px;
     }
 
-    /* Lock Animation Container */
+    /* Locked Heart Container */
     .lock-container {
       position: relative;
-      width: 200px;
+      width: 150px;
       height: 150px;
       margin: 50px auto;
       opacity: 0;
       transition: opacity 0.5s ease;
     }
 
-    /* Heart Halves Styling */
+    /* Locked Heart Icon */
+    .locked-heart {
+      font-size: 100px;
+      color: #ff6b6b;
+      position: relative;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .locked-heart::after {
+      content: '🔒';
+      font-size: 30px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    /* Unlocked Heart Halves */
     .heart-half {
       position: absolute;
       font-size: 60px;
+      color: #ff6b6b;
       transition: all 1s ease;
       top: 0;
+      opacity: 0;
     }
     .left-heart { left: 30px; }
     .right-heart { right: 30px; }
 
-    /* Key Styling and Animation */
-    #key {
-      position: absolute;
-      font-size: 50px;
-      top: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all 1s ease;
-      animation: float 2s ease-in-out infinite;
-    }
-
     /* Unlocking Animations */
+    .unlocked .locked-heart {
+      opacity: 0;
+      transform: scale(0);
+    }
+    .unlocked .heart-half {
+      opacity: 1;
+    }
     .unlocked .left-heart {
       transform: translateX(-50px) rotate(-45deg);
-      opacity: 0;
     }
     .unlocked .right-heart {
       transform: translateX(50px) rotate(45deg);
-      opacity: 0;
-    }
-    .unlocked #key {
-      transform: translate(-50%, 30px) rotate(90deg);
-      animation: none;
-      opacity: 0;
     }
 
     /* Content Section */
@@ -118,9 +125,9 @@
 
     /* Image Styling */
     img {
-      max-width: 100%; /* Ensures the image doesn't overflow its container */
-      height: auto; /* Maintains aspect ratio */
-      width: 300px; /* Fixed width (adjust as needed) */
+      max-width: 100%;
+      height: auto;
+      width: 300px;
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin: 20px 0;
@@ -128,8 +135,8 @@
 
     /* Animations */
     @keyframes float {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, -10px); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     @keyframes shake {
@@ -150,8 +157,8 @@
 
   <!-- Lock Animation Elements -->
   <div class="lock-container">
+    <div class="locked-heart">❤️</div>
     <div class="heart-half left-heart">❤️</div>
-    <div id="key">🔑</div>
     <div class="heart-half right-heart">❤️</div>
   </div>
 
