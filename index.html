@@ -123,14 +123,44 @@
       transition: all 1s ease;
     }
 
-    /* Image Styling */
-    img {
-      max-width: 100%;
-      height: auto;
+    /* Image Slider Styles */
+    .slider {
       width: 300px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin: 20px 0;
+      margin: 20px auto;
+    }
+
+    .slides {
+      display: flex;
+      width: 1800px; /* 6 images * 300px each */
+      animation: slide 30s infinite; /* 5s per image */
+    }
+
+    .slide {
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      16.66% { transform: translateX(-300px); }
+      33.33% { transform: translateX(-600px); }
+      50% { transform: translateX(-900px); }
+      66.66% { transform: translateX(-1200px); }
+      83.33% { transform: translateX(-1500px); }
+      100% { transform: translateX(-1800px); }
     }
 
     /* Animations */
@@ -165,7 +195,19 @@
   <!-- Birthday Content (Hidden Initially) -->
   <div id="content">
     <h1>Happy Birthday, Keyyyy! 💖</h1>
-    <img src="Kireina.png" alt="Kireina">
+    
+    <!-- Image Slider -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide"><img src="Kireina.png" alt="Image 1"></div>
+        <div class="slide"><img src="IMG_2114.jpeg" alt="Image 2"></div>
+        <div class="slide"><img src="IMG_2480.jpeg" alt="Image 3"></div>
+        <div class="slide"><img src="IMG_3375.jpeg" alt="Image 4"></div>
+        <div class="slide"><img src="IMG_4605.jpeg" alt="Image 5"></div>
+        <div class="slide"><img src="IMG_5250.jpeg" alt="Image 6"></div>
+      </div>
+    </div>
+
     <p>
       Dear Sayangku,<br><br>
       Happy 25th Birthday to the most amazing KEY to my heart! 🗝️<br><br>
@@ -194,8 +236,7 @@
 
       Yours,
 
-      DIY YEAAAAH
-      <!-- Your full message here -->
+      DIY YEAAAAH!
     </p>
     <a href="INSERT_YOUR_VIDEO_LINK_HERE" class="video-link" target="_blank">Watch Your Birthday Video 🎥</a>
   </div>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Kireina! 🎉</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #fff5f5;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Password Section Styles */
+    #password-container {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    
+    #password-input {
+      padding: 10px 20px;
+      border: 2px solid #ff6b6b;
+      border-radius: 25px;
+      font-size: 16px;
+      margin-right: 10px;
+      width: 200px;
+    }
+    
+    #password-button {
+      padding: 10px 20px;
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    #password-button:hover {
+      background-color: #e74c3c;
+    }
+    
+    #hint {
+      color: #666;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    
+    #error-message {
+      color: #e74c3c;
+      display: none;
+      margin-top: 10px;
+    }
+
+    /* Locked Heart Container */
+    .lock-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 50px auto;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Locked Heart Icon */
+    .locked-heart {
+      font-size: 100px;
+      color: #ff6b6b;
+      position: relative;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .locked-heart::after {
+      content: '🔒';
+      font-size: 30px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    /* Unlocked Heart Halves */
+    .heart-half {
+      position: absolute;
+      font-size: 60px;
+      color: #ff6b6b;
+      transition: all 1s ease;
+      top: 0;
+      opacity: 0;
+    }
+    .left-heart { left: 30px; }
+    .right-heart { right: 30px; }
+
+    /* Unlocking Animations */
+    .unlocked .locked-heart {
+      opacity: 0;
+      transform: scale(0);
+    }
+    .unlocked .heart-half {
+      opacity: 1;
+    }
+    .unlocked .left-heart {
+      transform: translateX(-50px) rotate(-45deg);
+    }
+    .unlocked .right-heart {
+      transform: translateX(50px) rotate(45deg);
+    }
+
+    /* Content Section */
+    #content {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    /* Image Styling */
+    img {
+      max-width: 100%;
+      height: auto;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Password Input Section -->
+  <div id="password-container">
+    <input type="text" id="password-input" placeholder="Enter the secret code">
+    <button id="password-button" onclick="checkPassword()">Unlock</button>
+    <div id="hint">Hint: You're the ____ to DIY</div>
+    <div id="error-message">TETOT hayo apaaa 🔒</div>
+  </div>
+
+  <!-- Lock Animation Elements -->
+  <div class="lock-container">
+    <div class="locked-heart">❤️</div>
+    <div class="heart-half left-heart">❤️</div>
+    <div class="heart-half right-heart">❤️</div>
+  </div>
+
+  <!-- Birthday Content (Hidden Initially) -->
+  <div id="content">
+    <h1>Happy Birthday, Keyyyy! 💖</h1>
+    <img src="Kireina.png" alt="Kireina">
+    <p>
+      Dear Sayangku,<br><br>
+      Happy 25th Birthday to the most amazing KEY to my heart! 🗝️<br><br>
+      I will never ever tire to remind you that you are a blessing to this world, to my world especially.
+      I hope that the age of 25 becomes one of the most memorable ones for you, hoping the success you that you will have,
+      be it LPDP, campuses, being a mentor/teacher, getting fit, and of course semakin sholehah!
+
+      I wanted to remind yourself of a few things:
+      You are beautiful, both in and out. I love the way you look, your beatiful hair, your acne-less face, loving smile,
+      fit body, and everything that is physical about you. I also really love what you have inside, how kind and demure you are,
+      how you remind me of everyting that is important, the mannerisms, the way you speak, everything. May this beauty of yours
+      grow forever after.
+
+      You are loved, like really loved. You are always loved by me, I will always say I love you every single time you ask me. I also
+      think that you have tons of people loving you! Don't ever forget that. You have your friends, your family, kakak, chia, chiyo, everyone!
+      Kamu salah satu orang paling loving yang aku kenal dan aku percaya banget this love of yours will pay you back much much much more.
+
+      You are great! I'm wishing that this year may be the one for you to finally see how wonderful and amazing you are!
+      Aku gaaakan cape cape ngomong betapa bangga aku punya pacar kayak kamu. Mannerisms bagus banget, suara top notch, muka
+      perfect, atlethtic juga iya, hardworking juga terus sholehah banget. Aku suka the fact that you are a bit of everything
+      dan kamu ga biarin dirimu tergoda ama yang engga-engga. I really hope that this following year may help you step up lebih dan lebih lagi,
+      kamu bisa ambil masters yang bener-bener kamu mau, bisa liburan ke tempat-tempat yang kamu mau, make core memories dengan
+      orang-orang yang kamu mau, dan bisa realize potential kammu one step at a time, be it singing, teaching, climbing, or anything at all!
+
+      Sorry for my rambling baby, thank you so much for reading this! Wishing you the everbest on your 25th birthday baby.
+
+      Yours,
+
+      DIY YEAAAAH
+      <!-- Your full message here -->
+    </p>
+    <a href="INSERT_YOUR_VIDEO_LINK_HERE" class="video-link" target="_blank">Watch Your Birthday Video 🎥</a>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById('password-input').value.toLowerCase();
+      const errorMessage = document.getElementById('error-message');
+      
+      // Check if password matches any case variation of "key"
+      if (password === 'key') {
+        // Hide password section
+        document.getElementById('password-container').style.display = 'none';
+        
+        // Show lock animation
+        document.querySelector('.lock-container').style.opacity = '1';
+        
+        // Start unlock sequence
+        unlockHeart();
+      } else {
+        // Show error message
+        errorMessage.style.display = 'block';
+        
+        // Shake animation for wrong password
+        document.getElementById('password-input').style.animation = 'shake 0.5s';
+        setTimeout(() => {
+          document.getElementById('password-input').style.animation = '';
+        }, 500);
+        
+        // Clear input and refocus
+        document.getElementById('password-input').value = '';
+        document.getElementById('password-input').focus();
+      }
+    }
+
+    function unlockHeart() {
+      // Add unlocked class to trigger CSS animations
+      document.querySelector('.lock-container').classList.add('unlocked');
+      
+      // After animations complete, show content
+      setTimeout(() => {
+        document.getElementById('content').style.opacity = '1';
+        document.getElementById('content').style.transform = 'translateY(0)';
+      }, 1000);
+    }
+
+    // Allow Enter key to submit password
+    document.getElementById('password-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') checkPassword();
+    });
+  </script>
+</body>
+</html>
