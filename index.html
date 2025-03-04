@@ -125,8 +125,9 @@
 
     /* Image Slider Styles */
     .slider {
-      width: 300px;
-      height: 300px;
+      width: 100%; /* Full width of container */
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625) */
       overflow: hidden;
       position: relative;
       border-radius: 15px;
@@ -136,31 +137,44 @@
 
     .slides {
       display: flex;
-      width: 1800px; /* 6 images * 300px each */
+      width: 600%; /* 6 images * 100% each */
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
       animation: slide 30s infinite; /* 5s per image */
     }
 
     .slide {
-      width: 300px;
-      height: 300px;
+      width: 100%;
+      height: 100%;
       flex-shrink: 0;
     }
 
     .slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* Ensures images fill the container */
       border-radius: 15px;
     }
 
     @keyframes slide {
       0% { transform: translateX(0); }
-      16.66% { transform: translateX(-300px); }
-      33.33% { transform: translateX(-600px); }
-      50% { transform: translateX(-900px); }
-      66.66% { transform: translateX(-1200px); }
-      83.33% { transform: translateX(-1500px); }
-      100% { transform: translateX(-1800px); }
+      16.66% { transform: translateX(-100%); }
+      33.33% { transform: translateX(-200%); }
+      50% { transform: translateX(-300%); }
+      66.66% { transform: translateX(-400%); }
+      83.33% { transform: translateX(-500%); }
+      100% { transform: translateX(-600%); }
+    }
+
+    /* Paragraph Formatting */
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #333;
+      margin: 20px 0;
+      white-space: pre-line; /* Preserves line breaks */
     }
 
     /* Animations */
@@ -210,33 +224,33 @@
 
     <p>
       Dear Sayangku,<br><br>
-      Happy 25th Birthday to the most amazing KEY to my heart! 🗝️<br><br>
+      Happy 25th Birthday you sayangku, the KEY to my heart! <br><br>
       I will never ever tire to remind you that you are a blessing to this world, to my world especially.
       I hope that the age of 25 becomes one of the most memorable ones for you, hoping the success you that you will have,
-      be it LPDP, campuses, being a mentor/teacher, getting fit, and of course semakin sholehah!
+      be it LPDP, campuses, being a mentor/teacher, getting fit, and of course semakin sholehah! <br><br>
 
-      I wanted to remind yourself of a few things:
+      I wanted to remind yourself of a few things: <br>
       You are beautiful, both in and out. I love the way you look, your beatiful hair, your acne-less face, loving smile,
       fit body, and everything that is physical about you. I also really love what you have inside, how kind and demure you are,
       how you remind me of everyting that is important, the mannerisms, the way you speak, everything. May this beauty of yours
-      grow forever after.
+      grow forever after. <br><br>
 
       You are loved, like really loved. You are always loved by me, I will always say I love you every single time you ask me. I also
       think that you have tons of people loving you! Don't ever forget that. You have your friends, your family, kakak, chia, chiyo, everyone!
-      Kamu salah satu orang paling loving yang aku kenal dan aku percaya banget this love of yours will pay you back much much much more.
+      Kamu salah satu orang paling loving yang aku kenal dan aku percaya banget this love of yours will pay you back much much much more.<br><br>
 
       You are great! I'm wishing that this year may be the one for you to finally see how wonderful and amazing you are!
       Aku gaaakan cape cape ngomong betapa bangga aku punya pacar kayak kamu. Mannerisms bagus banget, suara top notch, muka
       perfect, atlethtic juga iya, hardworking juga terus sholehah banget. Aku suka the fact that you are a bit of everything
       dan kamu ga biarin dirimu tergoda ama yang engga-engga. I really hope that this following year may help you step up lebih dan lebih lagi,
       kamu bisa ambil masters yang bener-bener kamu mau, bisa liburan ke tempat-tempat yang kamu mau, make core memories dengan
-      orang-orang yang kamu mau, dan bisa realize potential kammu one step at a time, be it singing, teaching, climbing, or anything at all!
+      orang-orang yang kamu mau, dan bisa realize potential kammu one step at a time, be it singing, teaching, climbing, or anything at all! <br><br>
 
-      Sorry for my rambling baby, thank you so much for reading this! Wishing you the everbest on your 25th birthday baby.
+      Sorry for my rambling baby, thank you so much for reading this! Wishing you the everbest on your 25th birthday baby.<br><br>
 
-      Yours,
+      Yours,<br><br>
 
-      DIY YEAAAAH!
+      DIY YEAAAAH
     </p>
     <a href="INSERT_YOUR_VIDEO_LINK_HERE" class="video-link" target="_blank">Watch Your Birthday Video 🎥</a>
   </div>
